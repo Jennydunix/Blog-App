@@ -1,13 +1,13 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "prisma/generate.ts",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      { "handle": "prisma" }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    { "src": "prisma/generate.ts", "use": "@vercel/node" }
+  ],
+  "routes": [
+    {
+      "src": "/prisma/generate",
+      "dest": "prisma/generate.ts",
+      "methods": ["GET"]
+    }
+  ]
+}
